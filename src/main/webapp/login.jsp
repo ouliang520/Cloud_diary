@@ -67,15 +67,15 @@
     <div id="copyright">
         <div class="quick">
             <ul>
-                <li><input type="button" class="quickbd iphone" onclick="location.href='http://lezijie.com'" /></li>
-                <li><input type="button" class="quickbd android" onclick="location.href='http://lezijie.com'" /></li>
-                <li><input type="button" class="quickbd pc" onclick="location.href='http://lezijie.com'" /></li>
+                <li><input type="button" class="quickbd iphone" onclick="location.href='https://github.com/ouliang520/Cloud_diary'" /></li>
+                <li><input type="button" class="quickbd android" onclick="location.href='https://github.com/ouliang520/Cloud_diary'" /></li>
+                <li><input type="button" class="quickbd pc" onclick="location.href='https://github.com/ouliang520/Cloud_diary'" /></li>
                 <div class="clr"></div>
             </ul>
             <div class="clr"></div>
         </div>
         <div class="text">
-            Copyright © 2006-2026  <a href="http://www.shsxt.com">星空云日记</a>  All Rights Reserved
+            Copyright © 2006-2026  <a href="https://github.com/ouliang520/Cloud_diary">星空云日记</a>  All Rights Reserved
         </div>
     </div>
 </div>
