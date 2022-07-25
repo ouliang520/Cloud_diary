@@ -36,4 +36,9 @@ public class MainService {
         int i=nodeDao.selectAllNum();
         return i;
     }
+
+    public List<Node> selectDim(String dim, String page) {
+        List<Node> list=nodeDao.selectDim(dim,page);
+        return list;
+    }
 }

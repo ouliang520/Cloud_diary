@@ -67,10 +67,10 @@
                         class="glyphicon glyphicon-signal"></i>&nbsp;数据报表</a></li>
 
             </ul>
-            <form class="navbar-form navbar-right" role="search" action="main">
+            <form class="navbar-form navbar-right" role="search" action="/main/dim">
                 <div class="form-group">
                     <input type="hidden" name="act" value="searchKey">
-                    <input type="text" name="val" class="form-control" placeholder="搜索云记">
+                    <input type="text" name="dim" class="form-control" id="dim" placeholder="搜索云记">
                 </div>
                 <button type="submit" class="btn btn-default">查询</button>
             </form>

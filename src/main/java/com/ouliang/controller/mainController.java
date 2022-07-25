@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -59,6 +61,35 @@ public class mainController {
         int page=mainService.selectAllNum();
 
         return page;
+    }
+
+    @RequestMapping("/selectDim")
+    @ResponseBody
+    public List<Node> selectDim(@RequestParam String dim, @RequestParam String page, HttpServletRequest request) {
+        //设置云记页面(session)
+        request.getSession().setAttribute("changePage","static/info/dim.jsp");
+        Cookie[] cookies= request.getCookies();
+        if (cookies!=null){
+            for (Cookie cookie:cookies){
+                if ("dim".equals(cookie.getName())){
+                    dim=cookie.getValue();
+                }
+            }
+        }
+        List<Node> list=mainService.selectDim(dim,page);
+        return list;
+    }
+
+    @RequestMapping("/dim")
+    public String dim(@RequestParam String dim, HttpServletRequest request, HttpServletResponse response){
+        Cookie cookie=new Cookie("dim",dim);
+        //设置失效时间
+        cookie.setMaxAge(60*60);
+        //响应给客户端
+        response.addCookie(cookie);
+        //设置云记页面(session)
+        request.getSession().setAttribute("changePage","static/info/dim.jsp");
+        return "redirect:/index.jsp";//重定向
     }
 
 

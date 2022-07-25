@@ -135,8 +135,6 @@ var clickChange= function () {
     // 1、获取参数（文本框：类型名称、隐藏域：类型ID）
     var typeId = $("#typeId").val();
     var typeName = $("#typename").val();
-    window.alert(typeId+typeName)
-
     // 2、判断参数是否为空（类型名称）
     if (isEmpty(typeName)) {
         // 如果为空，提示信息，并return

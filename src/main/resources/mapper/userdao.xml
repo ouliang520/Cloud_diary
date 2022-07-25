@@ -10,8 +10,8 @@
 <mapper namespace="com.ouliang.dao.UserDao">
     <resultMap type="com.ouliang.entity.User" id="user">
         <id column="userId" property="userId"/>
-        <result column="uname" property="userName" />
-        <result column="upwd" property="userPwd" />
+        <result column="uname" property="userName"/>
+        <result column="upwd" property="userPwd"/>
     </resultMap>
     <!--
      select:表示查询操作
@@ -23,21 +23,27 @@
 
      -->
     <select id="selectByUser" resultMap="user" resultType="com.ouliang.entity.User">
-        select * from tb_user where uname=#{userName} and upwd=#{userPwd}
+        select *
+        from tb_user
+        where uname = #{userName}
+          and upwd = #{userPwd}
     </select>
 
     <select id="checkByNick" resultType="java.lang.Integer">
-        select count(*) from tb_user where nick=#{nick}
+        select count(*)
+        from tb_user
+        where nick = #{nick}
     </select>
 
-    <update id="changeByNick" >
-        UPDATE  tb_user SET
+    <update id="changeByNick">
+        UPDATE tb_user SET
         <if test="head != null and head !='' and head !='0'.toString()">
             head=#{head},
         </if>
         nick=#{nick},mood=#{mood}
         WHERE uname=#{userName};
     </update>
+
 
 </mapper>
         <!--

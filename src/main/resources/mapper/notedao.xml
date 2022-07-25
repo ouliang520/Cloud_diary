@@ -55,6 +55,22 @@
         where typeId = #{typeId}
     </select>
 
+    <select id="selectDim" resultType="com.ouliang.entity.Node">
+        SELECT *
+        FROM tb_note
+        WHERE title LIKE '%${dim}%'
+           OR content LIKE '%${dim}%'
+           OR pubTime LIKE '%${dim}%'
+        UNION
+        (SELECT *
+         FROM tb_note
+         WHERE typeId =
+               (SELECT typeId FROM tb_note_type WHERE typeName LIKE '%${dim}%')
+        )
+
+        LIMIT 0,7
+    </select>
+
 </mapper>
         <!--
  sql映射文件:写sql语句的,mybatis会执行这些sql

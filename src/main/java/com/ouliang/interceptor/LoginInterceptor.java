@@ -36,10 +36,10 @@ public class LoginInterceptor implements HandlerInterceptor {
                     response.sendRedirect("/index.jsp");
                 }
             }
-            if(null != user)
-            {
-                return true;
-            }
+        }
+        if(null != user)
+        {
+            return true;
         }
 
         response.sendRedirect("/login.jsp");

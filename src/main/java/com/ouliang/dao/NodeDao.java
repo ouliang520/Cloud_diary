@@ -21,4 +21,6 @@ public interface NodeDao {
     int deleteNodeById(String noteId);
 
     int selectByTypeId(String typeId);
+
+    List<Node> selectDim(String dim, String page);
 }
